@@ -1,7 +1,5 @@
 import os
 
-from pandas.core.base import DataError
-
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
