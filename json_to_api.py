@@ -1,8 +1,9 @@
 import os
 import argparse
-import json
 import pandas as pd
 import requests
+
+from config import REST_API, REST_API_USER, REST_API_PASSWORD
 
 
 def setup_args():
@@ -33,8 +34,8 @@ def main():
     for idx, record in enumerate(records):
         print(f'Posting record {idx}')
         r = requests.post(
-            url='http://localhost:8000/api/recipes/',
-            auth=('cyyeh', '2413'),
+            url=f'{REST_API}/recipes/',
+            auth=(REST_API_USER, REST_API_PASSWORD),
             data=record
         )
         print(r.reason)
